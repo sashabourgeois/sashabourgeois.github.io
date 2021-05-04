@@ -33,8 +33,8 @@ var init = function (window) {
         }
 
         // TODO 3 / 7 : Call the drawCircle() function 
-        for (var drawCircle = 0; drawCircle <= 100; drawCircle++){
-
+        for (var i = 0; i <= 100; i++){
+            drawCircle();
         
         }
 
@@ -80,10 +80,16 @@ var init = function (window) {
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            if ( circle.y > circle.height) {
+            if ( circle.y > canvas.height) {
                 circle.y = 0;
             }
-            var rightEdge = circle.x + circle.radius;
+            
+            if (circle.x < 0){
+                circle.x = canvas.width;
+            }
+            if (circle.y < 0){
+                circle.y = canvas.height;
+            }
 
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
